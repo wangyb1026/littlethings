@@ -27,6 +27,7 @@ const AirQualityLevel = {
 }
 
 const coordRegex = /https:\/\/weather-data\.apple\.com\/v1\/weather\/([\w-]+)\/(-?[0-9]+\.[0-9]+)\/(-?[0-9]+\.[0-9]+)\?/
+console.log($request)
 const [_, language, lat, lng] = $request.url.match(coordRegex)
 
 function classifyAirQualityLevel(aqiIndex) {
