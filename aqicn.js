@@ -7,7 +7,7 @@ const aqicnToken = '030fcd535393b2bf8a38b92b9b30ee43eab0b476'
 // STEP 2: 参考下方配置片段，在代理工具的配置文件中添加对应的配置。注意：script-response-body 后应该替换为添加 apicnToken 值后的脚本路径
 /*
 [rewrite_local]
-https://weather-data.apple.com/v2/weather/[\w-]+/-?[0-9]+\.[0-9]+/-?[0-9]+\.[0-9]+\? url script-response-body aqicn.js
+https://weather-data.apple.com/v1/weather/[\w-]+/-?[0-9]+\.[0-9]+/-?[0-9]+\.[0-9]+\? url script-response-body aqicn.js
 [mitm]
 hostname = weather-data.apple.com
 */
@@ -26,7 +26,7 @@ const AirQualityLevel = {
 	HAZARDOUS: 6
 }
 
-const coordRegex = /https:\/\/weather-data\.apple\.com\/v2\/weather\/([\w-]+)\/(-?[0-9]+\.[0-9]+)\/(-?[0-9]+\.[0-9]+)\?/
+const coordRegex = /https:\/\/weather-data\.apple\.com\/v1\/weather\/([\w-]+)\/(-?[0-9]+\.[0-9]+)\/(-?[0-9]+\.[0-9]+)\?/
 const [_, language, lat, lng] = $request.url.match(coordRegex)
 
 function classifyAirQualityLevel(aqiIndex) {
