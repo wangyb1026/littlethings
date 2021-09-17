@@ -12,10 +12,9 @@ const aqicnToken = '030fcd535393b2bf8a38b92b9b30ee43eab0b476'
 	[MITM]
 	hostname = weather-data.apple.com
 */
-
 const AirQualityStandard = {
-	CN: 'HJ6332012.4',
-	US: 'EPA_NowCast.4'
+	CN: 'HJ6332012.2111',
+	US: 'EPA_NowCast.2111'
 }
 
 const AirQualityLevel = {
